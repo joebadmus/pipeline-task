@@ -16,7 +16,7 @@ resource "aws_s3_bucket" "s3backend" {
 terraform {
   backend "s3" {
     bucket = "joeb-s3-backend-dev"
-    key    = "dev/terraform.tfstate"
+    key    = "dev/s3state.tfstate"
     dynamodb_table = "terraform-state-lock-dynamo"
     region = "eu-west-1"
   }
