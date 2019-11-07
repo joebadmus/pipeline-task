@@ -2,6 +2,28 @@ data "template_file" "jenkins_data" {
   template = "${file("template/jenkins-data.tpl")}"
 }
 
+
+terraform {
+  backend "s3" {
+    bucket = "joeb-s3-backend-dev"
+    key    = "dev/s3state.tfstate"
+    # dynamodb_table = "terraform-state-lock-dynamo"
+    region = "eu-west-1"
+  }
+}
+
+# data "terraform_remote_state" "s3state" {
+#   backend = "s3"
+#   config = {
+#     bucket = "joeb-s3-backend-dev"
+#     key    = "dev/jenkinsSF.tfstate"
+#     # dynamodb_table = "terraform-state-lock-dynamo"
+#     region = "eu-west-1"
+#   }
+# }
+
+
+
 resource "aws_instance" "JenkinsBox" {
   ami                         = "${var.ami_id}"
   instance_type               = "${var.instance_type}"
