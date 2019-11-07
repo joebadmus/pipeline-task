@@ -1,0 +1,8 @@
+variable "region" {
+  default = "eu-west-1"
+}
+
+variable "environment" {
+  default     = "dev"
+  description = "Name of the environment. e.g. prod, qa, dev"
+}
