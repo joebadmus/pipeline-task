@@ -13,14 +13,14 @@ resource "aws_s3_bucket" "s3backend" {
   }
 }
 
-terraform {
-  backend "s3" {
-    bucket = "joeb-s3-backend-dev"
-    key    = "dev/terraform.tfstate"
-    # dynamodb_table = "terraform-state-lock-dynamo"
-    region = "eu-west-1"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket = "joeb-com-dev-s3-backend"
+#     key    = "infra/lock/terraform.tfstate"
+#     # dynamodb_table = "terraform-state-lock-dynamo"
+#     region = "eu-west-1"
+#   }
+# }
 
 # resource "aws_dynamodb_table" "dynamodb-terraform-state-lock" {
 #   name           = "terraform-state-lock-dynamo"
