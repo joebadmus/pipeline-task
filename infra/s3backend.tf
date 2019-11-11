@@ -18,7 +18,7 @@ resource "aws_s3_bucket" "s3backend" {
 #     bucket = "joeb-com-dev-s3-backend"
 #     key    = "infra/lock/terraform.tfstate"
 #     # dynamodb_table = "terraform-state-lock-dynamo"
-#     region = "eu-west-1"
+#     region = "eu-west-2"
 #   }
 # }
 
